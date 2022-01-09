@@ -12,6 +12,6 @@ if(isset($_GET['id'])) {
         die(mysqli_error($con));
     }
     else {
-        header('Location: http://localhost:4200/crud/search.php');
+        header('Location: http://localhost:4200/pages/search.php');
     }
 }

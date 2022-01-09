@@ -8,16 +8,19 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-    <title>PHP Crud</title>
+    <title>PHP Crud - Search</title>
 
     <style>
         table {
             max-width: 81rem;
             width: 90%;
-            margin: 0 auto;
         }
         th, td {
             text-align: center;
+        }
+        td {
+            width: 20.25rem;
+            vertical-align: middle;
         }
     </style>
 </head>
@@ -34,8 +37,8 @@
                 </li>
             </ul>
         </nav>
-        <h1 class="text-center my-4">Pesquisar Notícia</h1>
-        <table class="table">
+        <h1 class="text-center my-5">Pesquisar Notícia</h1>
+        <table class="table table-striped table-light">
             <thead>
                 <tr>
                     <th scope="col">Nome</th>
@@ -55,13 +58,13 @@
                 while ($row = mysqli_fetch_assoc($res)) {
                     $id = $row['idNoticia'];
                     $name = $row['nomeNoticia'];
+                    $date = date("d/m/Y", strtotime($row['dataNoticia']));
                     if($row['urgenteNoticia'] == 1) {
                         $urgent = "Sim";
                     }
                     else {
                         $urgent = "Não";
                     }
-                    $date = $row['dataNoticia'];
 
                     echo '
                         <tr>
@@ -85,7 +88,7 @@
         </table>
         <footer class="d-flex flex-wrap align-items-center justify-content-center py-3 my-4 border-top">
             <div class="col-md-4 d-flex align-items-center justify-content-center">
-                <span class="text-muted">Grupo Maxpro Educacional</span>
+                <span class="text-muted">PHP Crud</span>
             </div>
         </footer>
     </div>
