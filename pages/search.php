@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
 
     <title>PHP Crud - Search</title>
 
@@ -15,9 +16,12 @@
             max-width: 81rem;
             width: 90%;
         }
-        th, td {
+
+        th,
+        td {
             text-align: center;
         }
+
         td {
             width: 20.25rem;
             vertical-align: middle;
@@ -49,7 +53,7 @@
             </thead>
             <tbody>
                 <?php
-                
+
                 require '../bd.php';
 
                 $sql = "SELECT * FROM noticia";
@@ -59,10 +63,9 @@
                     $id = $row['idNoticia'];
                     $name = $row['nomeNoticia'];
                     $date = date("d/m/Y", strtotime($row['dataNoticia']));
-                    if($row['urgenteNoticia'] == 1) {
+                    if ($row['urgenteNoticia'] == 1) {
                         $urgent = "Sim";
-                    }
-                    else {
+                    } else {
                         $urgent = "Não";
                     }
 
@@ -72,8 +75,12 @@
                             <td>' . $urgent . '</td>
                             <td>' . $date . '</td>
                             <td>
-                                <a type="button" class="btn btn-warning m-1" href="./edit.php?id='.$id.'">Editar</a>
-                                <a type="button" class="btn btn-danger m-1" href="./delete.php?id='.$id.'">Remover</a>
+                                <a type="button" class="btn btn-warning m-1" href="./edit.php?id=' . $id . '">
+                                    <i class="bi bi-pencil-square"></i>
+                                </a>
+                                <a type="button" class="btn btn-danger m-1" href="./delete.php?id=' . $id . '">
+                                    <i class="bi bi-trash"></i>
+                                </a>
                             </td>
                         </tr>
                     ';

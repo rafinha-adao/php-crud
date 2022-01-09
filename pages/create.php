@@ -54,6 +54,7 @@
         </footer>
     </div>
 </body>
+
 </html>
 
 <?php
@@ -77,8 +78,7 @@ if (isset($_POST['submit'])) {
 
     if ($res === false) {
         die(mysqli_error($con));
-    }
-    else {
+    } else {
         header('Location: http://localhost:4200/pages/search.php');
     }
 }
