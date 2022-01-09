@@ -2,10 +2,11 @@
 
 require '../bd.php';
 
+// DELETE DATA
 if (isset($_GET['id'])) {
 
     $id = $_GET['id'];
-    $sql = "DELETE FROM noticia WHERE idNoticia = '$id'";
+    $sql = "DELETE FROM `noticia` WHERE idNoticia = '$id'";
 
     $res = mysqli_query($con, $sql);
     if ($res === false) {

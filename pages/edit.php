@@ -81,7 +81,7 @@
         ?>
         <footer class="d-flex flex-wrap align-items-center justify-content-center py-3 my-4 border-top">
             <div class="col-md-4 d-flex align-items-center justify-content-center">
-                <span class="text-muted">PHP Crud</span>
+                <span class="text-muted">PHP Crud - Rafael Adão</span>
             </div>
         </footer>
     </div>
